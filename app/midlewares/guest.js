@@ -3,6 +3,5 @@ module.exports = (req, res, next) => {
     return next();
   }
 
-  req.flash('error', 'Não autorizado');
-  return res.redirect('/');
+  return res.redirect('/app/dashboard');
 };

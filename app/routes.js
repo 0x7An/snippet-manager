@@ -12,9 +12,9 @@ routes.use((req, res, next) => {
   next();
 });
 
-routes.get('/', authController.signin);
+routes.get('/', guestMidleware, authController.signin);
 routes.get('/signup', guestMidleware, authController.signup);
-routes.get('/signout', guestMidleware, authController.signout);
+routes.get('/signout', authController.signout);
 
 routes.post('/register', authController.register);
 routes.post('/authenticate', authController.authenticate);
