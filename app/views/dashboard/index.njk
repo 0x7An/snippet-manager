@@ -11,10 +11,16 @@
         <div class="categories">
             <strong>CATEGORIAS</strong>
             <ul>
+                {% for category in categories %}
                 <li>
-                    <a href="">NODE</a>
+                    <a href="/app/categories/{{ category.id }}">
+                        {{ category.title }}
+                        <span>{{ category.Snippets.length }}</span>
+                    </a>
                 </li>
+                {% endfor %}
             </ul>
+            <a href="">NOVA CATEGORIA</a>
         </div>
     </nav>
   </div>
