@@ -30,6 +30,10 @@ routes.get('/app/dashboard', dashboardController.index);
 routes.use('/app/categories/:id', categoryController.show);
 routes.use('/app/categories/create', categoryController.store);
 
+
+// Snippets
+routes.post('/app/categories/:categoryid/snippets/create', snippetController.store);
+
 routes.use((req, res) => res.render('errors/index'));
 
 routes.use((err, req, res, _next) => {
