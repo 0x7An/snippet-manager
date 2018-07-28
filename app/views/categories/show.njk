@@ -1,0 +1,18 @@
+{% extends 'layouts/default.njk' %}
+
+{% block body %}
+    <div class="wrapper">
+        {% include 'partials/nav.njk' %}
+        <section class="snippets-list">
+            <div class="list-header">
+            <a href="#">NOVO SNIPPET</a>
+            </div>
+            {% for snippet in snippets %}
+            <a href="/app/categories/{{ activeCategory }}/sippets/{{ snippet.id }}">
+                <strong>{{ snippet.title }}</strong>
+                <p>{{ snippet.exercpt }}</p>
+            </a>
+            {% endfor %}
+        </section>
+    </div>
+{% endblock %}
