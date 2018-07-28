@@ -3,8 +3,8 @@ module.exports = {
     queryInterface.createTable('Users', {
       id: {
         allowNull: false,
+        primaryKey: true,
         autoIncrement: true,
-        primatyKey: true,
         type: DataTypes.INTEGER,
       },
       name: {
