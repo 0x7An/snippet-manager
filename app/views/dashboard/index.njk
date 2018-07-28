@@ -2,26 +2,6 @@
 
 {% block body %}
   <div class="wrapper">
-    <nav id="main">
-        <div class="header">
-            <strong>Minha biblioteca</strong>
-            <a href="/signout">Sair</a>
-        </div>
-
-        <div class="categories">
-            <strong>CATEGORIAS</strong>
-            <ul>
-                {% for category in categories %}
-                <li>
-                    <a href="/app/categories/{{ category.id }}">
-                        {{ category.title }}
-                        <span>{{ category.Snippets.length }}</span>
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
-            <a href="">NOVA CATEGORIA</a>
-        </div>
-    </nav>
+    {% include 'partials/nav.njk' %}
   </div>
 {% endblock %}
