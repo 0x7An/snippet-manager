@@ -7,7 +7,8 @@ module.exports = {
         ...req.body,
         UserId: req.session.user.id,
       });
-      req.flash('Success', 'Categoria criada com sucesso');
+
+      req.flash('sucess', 'Categoria criada com sucesso');
 
       return res.redirect(`/app/categories/${category.id}`);
     } catch (err) {

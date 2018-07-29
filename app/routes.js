@@ -2,6 +2,7 @@ const express = require('express');
 const authController = require('./controllers/authController');
 const dashboardController = require('./controllers/dashboardController');
 const categoryController = require('./controllers/categoryController');
+const snippetController = require('./controllers/snippetController');
 
 const authMidleware = require('./midlewares/auth');
 const guestMidleware = require('./midlewares/guest');
@@ -27,12 +28,11 @@ routes.use('/app', authMidleware);
 routes.get('/app/dashboard', dashboardController.index);
 
 // Categories
-routes.use('/app/categories/:id', categoryController.show);
-routes.use('/app/categories/create', categoryController.store);
-
+routes.get('/app/categories/:id', categoryController.show);
+routes.post('/app/categories/create', categoryController.store);
 
 // Snippets
-routes.post('/app/categories/:categoryid/snippets/create', snippetController.store);
+routes.post('/app/categories/:categoryId/snippets/create', snippetController.store);
 
 routes.use((req, res) => res.render('errors/index'));
 
