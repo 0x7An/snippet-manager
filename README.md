@@ -12,7 +12,8 @@
     "method-override": "^3.0.0",
     "nunjucks": "^3.1.3",
     "pg": "^7.4.3",
-    "sequelize": "^4.38.0"```
+    "sequelize": "^4.38.0"
+ ```
 
 ![alt text](https://raw.githubusercontent.com/andersondsl/snippets/master/app/public/show.png)
 
