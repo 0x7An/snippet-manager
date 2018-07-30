@@ -32,7 +32,10 @@ routes.get('/app/categories/:id', categoryController.show);
 routes.post('/app/categories/create', categoryController.store);
 
 // Snippets
+routes.get('/app/categories/:categoryId/snippets/:id', snippetController.show);
 routes.post('/app/categories/:categoryId/snippets/create', snippetController.store);
+routes.put('/app/categories/:categoryId/snippets/:id', snippetController.update);
+routes.delete('/app/categories/:categoryId/snippets/:id', snippetController.destroy);
 
 routes.use((req, res) => res.render('errors/index'));
 
